@@ -11,3 +11,10 @@ position = Vector2(565.82117, 322.808)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2067783757]
 texture = ExtResource("1_wtcfe")
+
+[node name="Label" type="Label" parent="." unique_id=1401792729]
+offset_left = -78.82117
+offset_top = -180.80801
+offset_right = 80.17883
+offset_bottom = -157.80801
+text = "Hej Hej Jun was here"
