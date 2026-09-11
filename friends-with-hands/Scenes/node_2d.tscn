@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dtt5y3xwxsrlw"]
+
+[ext_resource type="Texture2D" uid="uid://bsfg3ewdd0r6n" path="res://Sprites/pointing hand cursor.png" id="1_v1qfn"]
+[ext_resource type="Script" uid="uid://dothh3t7j2vqx" path="res://Scripts/player.gd" id="2_hh5uf"]
+
+[node name="MainScene" type="Node2D" unique_id=969649068]
+position = Vector2(565.82117, 322.808)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=681319635]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
+
+[node name="Player" type="Sprite2D" parent="." unique_id=2067783757]
+scale = Vector2(5, 5)
+texture = ExtResource("1_v1qfn")
+script = ExtResource("2_hh5uf")
