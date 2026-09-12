@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bsfg3ewdd0r6n" path="res://Sprites/pointing hand cursor.png" id="1_v1qfn"]
 [ext_resource type="PackedScene" uid="uid://ppwdgvi8f7v3" path="res://Scenes/Prefabs/enemy.tscn" id="2_6whob"]
 [ext_resource type="Script" uid="uid://dothh3t7j2vqx" path="res://Scripts/player.gd" id="2_hh5uf"]
-[ext_resource type="PackedScene" uid="uid://c6v0k1y27otru" path="res://Scenes/Prefabs/projectile.tscn" id="4_u7krg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 63.178833
@@ -23,13 +22,14 @@ mob_scene = ExtResource("2_6whob")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
 
+[node name="Enemy" parent="." unique_id=2007031267 instance=ExtResource("2_6whob")]
+position = Vector2(515.17883, 1.1919861)
+
 [node name="Player" type="Area2D" parent="." unique_id=728170765]
 script = ExtResource("2_hh5uf")
-projectile = ExtResource("4_u7krg")
 metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=2067783757]
-rotation = 0.7853982
 scale = Vector2(5, 5)
 texture = ExtResource("1_v1qfn")
 
@@ -37,24 +37,24 @@ texture = ExtResource("1_v1qfn")
 shape = SubResource("CapsuleShape2D_g4v7s")
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1749342172]
-wait_time = 3.0
+wait_time = 0.5
 
 [node name="StartTimer" type="Timer" parent="." unique_id=956998816]
-wait_time = 0.5
+wait_time = 2.0
 one_shot = true
 autostart = true
 
 [node name="MobPath" type="Path2D" parent="." unique_id=197598557]
 curve = SubResource("Curve2D_u7krg")
 
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" unique_id=998614018]
+[node name="PathFollow2D" type="PathFollow2D" parent="MobPath" unique_id=998614018]
 position = Vector2(-957.82117, -540.808)
 rotation = 0.0010405824
 
 [node name="ScoreTimer" type="Timer" parent="." unique_id=841744959]
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
-[connection signal="gameOver" from="Player" to="Player" method="_on_game_over"]
+[connection signal="playerPosition" from="Player" to="." method="_on_player_player_position"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
