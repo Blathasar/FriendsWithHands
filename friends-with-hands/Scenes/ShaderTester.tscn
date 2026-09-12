@@ -1,27 +1,28 @@
 [gd_scene format=3 uid="uid://l4s1ss6n14yn"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_3qbjy"]
+[ext_resource type="Texture2D" uid="uid://bsfg3ewdd0r6n" path="res://Sprites/pointing hand cursor.png" id="1_3qbjy"]
+[ext_resource type="Shader" uid="uid://c5tvrkvsyna53" path="res://Materials & Shaders/shader.gdshader" id="1_wkiwa"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hr8pc"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wkiwa"]
+noise = SubResource("FastNoiseLite_hr8pc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hr8pc"]
+shader = ExtResource("1_wkiwa")
+shader_parameter/scrollingTexture = SubResource("NoiseTexture2D_wkiwa")
+shader_parameter/textureScale = Vector2(1, 1)
+shader_parameter/angle = 84.474004012515
+shader_parameter/textureSpeed = 0.1
+shader_parameter/thickness = 2.31600011001
+shader_parameter/tolerance = 0.0
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
 
 [node name="ShaderTester" type="Node2D" unique_id=1224899770]
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1193891423]
-position = Vector2(99, 64)
-amount = 5
-texture = SubResource("ImageTexture_3qbjy")
-lifetime = 2.0
-explosiveness = 1.0
-randomness = 0.25
-emission_shape = 1
-emission_sphere_radius = 30.55
-direction = Vector2(0, -1)
-spread = 30.0
-initial_velocity_min = 360.0
-initial_velocity_max = 800.0
-angular_velocity_min = -10.0
-angular_velocity_max = 10.0
-radial_accel_max = 15.0
-angle_min = -30.0
-angle_max = 30.0
-scale_amount_min = 0.2
-scale_amount_max = 0.2
-color = Color(0.9686273, 0.63602173, 0.5779178, 1)
+[node name="PointingHandCursor" type="Sprite2D" parent="." unique_id=1266706264]
+material = SubResource("ShaderMaterial_hr8pc")
+position = Vector2(8, 10)
+texture = ExtResource("1_3qbjy")

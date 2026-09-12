@@ -4,7 +4,22 @@
 [ext_resource type="PackedScene" uid="uid://ppwdgvi8f7v3" path="res://Scenes/Prefabs/enemy.tscn" id="2_6whob"]
 [ext_resource type="Script" uid="uid://dothh3t7j2vqx" path="res://Scripts/player.gd" id="2_hh5uf"]
 [ext_resource type="PackedScene" uid="uid://c6v0k1y27otru" path="res://Scenes/Prefabs/projectile.tscn" id="4_u7krg"]
+[ext_resource type="Shader" uid="uid://c5tvrkvsyna53" path="res://Materials & Shaders/shader.gdshader" id="4_wjtap"]
 [ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="5_u7krg"]
+[ext_resource type="Texture2D" uid="uid://l0tdju1hh1gk" path="res://Sprites/Background.png" id="6_tx0tn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjtap"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkiwa"]
+shader = ExtResource("4_wjtap")
+shader_parameter/scrollingTexture = ExtResource("6_tx0tn")
+shader_parameter/textureScale = Vector2(1, 1)
+shader_parameter/angle = 45.0
+shader_parameter/textureSpeed = 0.1
+shader_parameter/thickness = 5.8250002766875
+shader_parameter/tolerance = 0.0
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 63.178833
@@ -23,12 +38,18 @@ mob_scene = ExtResource("2_6whob")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
 
+[node name="Background" type="Sprite2D" parent="Camera2D" unique_id=1120033975]
+material = SubResource("ShaderMaterial_wjtap")
+texture = ExtResource("6_tx0tn")
+
 [node name="Player" type="Area2D" parent="." unique_id=728170765]
+material = SubResource("ShaderMaterial_wkiwa")
 script = ExtResource("2_hh5uf")
 projectile = ExtResource("4_u7krg")
 metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=2067783757]
+use_parent_material = true
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_u7krg")
@@ -40,7 +61,7 @@ shape = SubResource("CapsuleShape2D_g4v7s")
 wait_time = 3.0
 
 [node name="StartTimer" type="Timer" parent="." unique_id=956998816]
-wait_time = 0.5
+wait_time = 0.05
 one_shot = true
 autostart = true
 

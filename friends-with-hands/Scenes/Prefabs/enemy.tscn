@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ppwdgvi8f7v3"]
 
 [ext_resource type="Script" uid="uid://d2l0aejtjjoog" path="res://Scripts/enemy.gd" id="1_5f3i6"]
-[ext_resource type="Texture2D" uid="uid://dxxp5ryc6h30h" path="res://Sprites/HandsHandsHands/00000.png" id="2_5f3i6"]
+[ext_resource type="Texture2D" uid="uid://bmr4hf0yj41ob" path="res://Sprites/HandsHandsHands/10010.png" id="2_pe7bt"]
+[ext_resource type="Script" uid="uid://ba1ihbbmfwfnt" path="res://Scripts/particle_manger.gd" id="3_pe7bt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
 radius = 12.600006
@@ -16,12 +17,15 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=233321631]
 rotation = 0.7853982
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_5f3i6")
+texture = ExtResource("2_pe7bt")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2025828787]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=338477708]
 scale = Vector2(3, 3)
 shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="ParticleManger" type="Node2D" parent="." unique_id=939231338]
+script = ExtResource("3_pe7bt")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

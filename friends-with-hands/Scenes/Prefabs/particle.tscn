@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://debckkgt83v7j"]
+
+[ext_resource type="Script" uid="uid://bs75tovgdmv3y" path="res://Scripts/particle.gd" id="1_1x75o"]
+[ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="1_cftjp"]
+
+[node name="DeathParticle" type="CPUParticles2D" unique_id=2044906165]
+texture = ExtResource("1_cftjp")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 30.55
+direction = Vector2(0, -1)
+spread = 30.0
+initial_velocity_min = 360.0
+initial_velocity_max = 600.0
+angular_velocity_min = -10.0
+angular_velocity_max = 210.0
+radial_accel_max = 15.0
+angle_min = -30.0
+angle_max = 30.0
+scale_amount_min = 0.1
+scale_amount_max = 0.15
+script = ExtResource("1_1x75o")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -1,10 +1,14 @@
 extends RigidBody2D
 
+# Jun: Particle Varible
+@onready var particle_manager= $ParticleManger 
+
 var player_position: Vector2
 var velocity: Vector2
 
 func setup(player_pos:Vector2):
 	player_position = player_pos
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,3 +23,4 @@ func _process(delta):
 	
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
+	
