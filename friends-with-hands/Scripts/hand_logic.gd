@@ -1,16 +1,20 @@
+class_name HandLogic
+
 enum HandSign{
 	ROCK, PAPER, SCIZZOR, THUMBS_UP, NONE
 }
 
-static func convert_finger_positions_to_handsign(finger_positions:int) -> HandSign: 
+static func convert_finger_positions_to_handsign(finger_positions:Array[bool]) -> HandSign: 
+	if finger_positions.size() != 5:
+		return HandSign.NONE
 	match finger_positions:
-		0:
+		[false,false,false,false,false]:
 			return HandSign.ROCK
-		11111:
+		[true,true,true,true,true]:
 			return HandSign.PAPER
-		110:
+		[false,false,true,true,false]:
 			return HandSign.SCIZZOR
-		1: 
+		[false,false,false,false,true]: 
 			return HandSign.THUMBS_UP
 	return HandSign.NONE
 
@@ -20,5 +24,5 @@ static func beatsHand(attackingHandSign: HandSign, defendingHandSign: HandSign) 
 	defendingHandSign == HandSign.ROCK) || (attackingHandSign == HandSign.SCIZZOR && defendingHandSign == HandSign.PAPER):
 			return true
 	return false
-	
+
 	
