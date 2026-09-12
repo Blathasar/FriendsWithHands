@@ -6,6 +6,7 @@ signal hit
 signal gameOver
 var health: int
 var finger_positions: Array[bool] = [5]
+var texture
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +25,16 @@ func _process(delta: float) -> void:
 	finger_positions[3] = Input.is_action_pressed("pointer")
 	finger_positions[4] = Input.is_action_pressed("thumb")
 	
+	change_sprites_according_to_finger_positions()
+	
+
+func change_sprites_according_to_finger_positions():
+	var path = "res://Sprites/HandsHandsHands/" + HandLogic.convert_finger_positions_to_string(finger_positions) + ".png"
+	texture = load(path)
+	if (texture != null):
+		$PlayerSprite.texture = texture
+	
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
 		shoot()
@@ -38,6 +49,7 @@ func shoot():
 
 	get_tree().current_scene.add_child(proj)
 	
+	proj.change_texture(texture)
 	proj.global_position = global_position + direction * 50
 	proj.global_rotation = global_rotation
 	proj.direction = direction

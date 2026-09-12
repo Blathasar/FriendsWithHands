@@ -1,27 +1,6 @@
 [gd_scene format=3 uid="uid://c6v0k1y27otru"]
 
 [ext_resource type="Script" uid="uid://dpt7nggh7k1wa" path="res://Scripts/projectile.gd" id="1_hlkwl"]
-[ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="2_wuo0u"]
-[ext_resource type="Texture2D" uid="uid://bsfg3ewdd0r6n" path="res://Sprites/pointing hand cursor.png" id="2_yktai"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_57qmd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_wuo0u")
-}],
-"loop": 1,
-"name": &"Hand",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_yktai")
-}],
-"loop": 1,
-"name": &"enemy_default",
-"speed": 5.0
-}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
 radius = 12.600006
@@ -33,10 +12,9 @@ script = ExtResource("1_hlkwl")
 speed = 1000.0
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=195560976]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=1811440000]
+rotation = 1.5707964
 scale = Vector2(0.3, 0.3)
-sprite_frames = SubResource("SpriteFrames_57qmd")
-animation = &"Hand"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=882902206]
 

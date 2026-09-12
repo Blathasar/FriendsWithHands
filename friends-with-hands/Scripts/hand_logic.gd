@@ -18,6 +18,19 @@ static func convert_finger_positions_to_handsign(finger_positions:Array[bool]) -
 			return HandSign.THUMBS_UP
 	return HandSign.NONE
 
+static func convert_finger_positions_to_string(finger_positions:Array[bool]) -> String:
+	if finger_positions.size() != 5:
+		return ""
+	var finger_string:String
+	
+	for n in finger_positions.size():
+		if (finger_positions[n]):
+			finger_string += "1"
+		else:
+			finger_string += "0"
+	
+	return finger_string
+		
 static func beatsHand(attackingHandSign: HandSign, defendingHandSign: HandSign) -> bool:
 	if (attackingHandSign == HandSign.ROCK && 
 	defendingHandSign == HandSign.SCIZZOR) || (attackingHandSign == HandSign.PAPER &&
