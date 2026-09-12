@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dtt5y3xwxsrlw"]
 
 [ext_resource type="Script" uid="uid://dr1rbii4fgoiu" path="res://Scripts/mob_scene.gd" id="1_6whob"]
-[ext_resource type="Texture2D" uid="uid://bsfg3ewdd0r6n" path="res://Sprites/pointing hand cursor.png" id="1_v1qfn"]
 [ext_resource type="PackedScene" uid="uid://ppwdgvi8f7v3" path="res://Scenes/Prefabs/enemy.tscn" id="2_6whob"]
 [ext_resource type="Script" uid="uid://dothh3t7j2vqx" path="res://Scripts/player.gd" id="2_hh5uf"]
 [ext_resource type="PackedScene" uid="uid://c6v0k1y27otru" path="res://Scenes/Prefabs/projectile.tscn" id="4_u7krg"]
+[ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="5_u7krg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 63.178833
@@ -29,9 +29,9 @@ projectile = ExtResource("4_u7krg")
 metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=2067783757]
-rotation = 0.7853982
-scale = Vector2(5, 5)
-texture = ExtResource("1_v1qfn")
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_u7krg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=234021122]
 shape = SubResource("CapsuleShape2D_g4v7s")
