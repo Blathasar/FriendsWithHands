@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://bs75tovgdmv3y" path="res://Scripts/particle.gd" id="1_1x75o"]
 [ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="1_cftjp"]
 [ext_resource type="Texture2D" uid="uid://bkxqrlxb1wnrs" path="res://Sprites/ShaderTextures/Tex_red.png" id="2_82jvk"]
+[ext_resource type="AudioStream" uid="uid://dx2kgu00dhx7a" path="res://Sound/handclap1.wav" id="4_2rdo1"]
+[ext_resource type="AudioStream" uid="uid://ciak4sevrwdrl" path="res://Sound/handclap2.wav" id="5_o4p8t"]
+[ext_resource type="AudioStream" uid="uid://cyj1g6aw8n7e3" path="res://Sound/handclap3.wav" id="6_78xop"]
+[ext_resource type="AudioStream" uid="uid://w0ljv8cryhe7" path="res://Sound/handclap4.wav" id="7_n5u6n"]
+[ext_resource type="AudioStream" uid="uid://dfnoo2atig8so" path="res://Sound/handclap5.wav" id="8_2nnti"]
 
 [sub_resource type="Shader" id="Shader_p20hg"]
 code = "shader_type canvas_item;
@@ -120,6 +125,7 @@ angle_max = 30.0
 scale_amount_min = 0.1
 scale_amount_max = 0.15
 script = ExtResource("1_1x75o")
+death_sound_array = Array[AudioStream]([ExtResource("4_2rdo1"), ExtResource("5_o4p8t"), ExtResource("6_78xop"), ExtResource("7_n5u6n"), ExtResource("8_2nnti")])
 
 [node name="deathsound" type="AudioStreamPlayer2D" parent="." unique_id=97485497]
 
