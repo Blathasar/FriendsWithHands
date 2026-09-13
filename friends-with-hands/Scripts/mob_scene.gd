@@ -34,11 +34,17 @@ func _on_score_timer_timeout() -> void:
 	score += 1
 
 func _on_mob_timer_timeout() -> void:
+	spawn_random_mob()
+
+func spawn_random_mob():
+	spawn_specific_mob(HandLogic.generate_random_finger_positions())
+
+func spawn_specific_mob(finger_positions: Array[bool]):
 	# Create a new instance of the Mob scene.
 	var mob = mob_scene.instantiate()
 	
 	# Choose random finger_positions
-	mob.finger_positions = HandLogic.generate_random_finger_positions()
+	mob.finger_positions = finger_positions
 	
 	# Choose a random location on Path2D.
 	var mob_spawn_location = $MobPath/MobSpawnLocation
@@ -53,4 +59,3 @@ func _on_mob_timer_timeout() -> void:
 	
 	# Jun: connect mod_die signal to cameranode
 	mob.mob_die.connect(camera_node._on_mob_dying)
-	
