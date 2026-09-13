@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://l4s1ss6n14yn"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://h5f4wp4q14di"]
 
-[ext_resource type="Texture2D" uid="uid://bsfg3ewdd0r6n" path="res://Sprites/pointing hand cursor.png" id="1_3qbjy"]
+[ext_resource type="Texture2D" uid="uid://djg3072vlaopd" path="res://Sprites/ShaderTextures/Tex_orange.png" id="1_xt42t"]
 
-[sub_resource type="Shader" id="Shader_c32x4"]
+[sub_resource type="Shader" id="Shader_p20hg"]
 code = "shader_type canvas_item;
 
 // The texture to scroll with.
@@ -85,26 +85,13 @@ void fragment() {
 	}
 }"
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_hr8pc"]
-noise_type = 3
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wkiwa"]
-noise = SubResource("FastNoiseLite_hr8pc")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hr8pc"]
-shader = SubResource("Shader_c32x4")
-shader_parameter/scrollingTexture = SubResource("NoiseTexture2D_wkiwa")
+[resource]
+shader = SubResource("Shader_p20hg")
+shader_parameter/scrollingTexture = ExtResource("1_xt42t")
 shader_parameter/textureScale = Vector2(1, 1)
-shader_parameter/angle = 84.474004012515
+shader_parameter/angle = 45.0
 shader_parameter/textureSpeed = 0.1
-shader_parameter/thickness = 2.31600011001
-shader_parameter/tolerance = 0.0
+shader_parameter/thickness = 15.0000007125
+shader_parameter/tolerance = 0.50000002375
 shader_parameter/diagonals = true
 shader_parameter/rounded = true
-
-[node name="ShaderTester" type="Node2D" unique_id=1224899770]
-
-[node name="PointingHandCursor" type="Sprite2D" parent="." unique_id=1266706264]
-material = SubResource("ShaderMaterial_hr8pc")
-position = Vector2(8, 10)
-texture = ExtResource("1_3qbjy")
