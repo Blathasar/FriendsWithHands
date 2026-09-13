@@ -1,31 +1,31 @@
-[gd_scene format=3 uid="uid://dtt5y3xwxsrlw"]
+[gd_scene format=3 uid="uid://qqhec17uvgvq"]
 
-[ext_resource type="Script" uid="uid://dr1rbii4fgoiu" path="res://Scripts/mob_scene.gd" id="1_6whob"]
-[ext_resource type="PackedScene" uid="uid://ppwdgvi8f7v3" path="res://Scenes/Prefabs/enemy.tscn" id="2_6whob"]
-[ext_resource type="Script" uid="uid://dothh3t7j2vqx" path="res://Scripts/player.gd" id="2_hh5uf"]
-[ext_resource type="PackedScene" uid="uid://c6v0k1y27otru" path="res://Scenes/Prefabs/projectile.tscn" id="4_u7krg"]
-[ext_resource type="Texture2D" uid="uid://bk6hm8x04ypg0" path="res://Sprites/Heart.png" id="4_v7gqg"]
-[ext_resource type="Shader" uid="uid://c5tvrkvsyna53" path="res://Materials & Shaders/shader.gdshader" id="4_wjtap"]
-[ext_resource type="Texture2D" uid="uid://cayo7y041i06a" path="res://Sprites/ShaderTextures/Tex_pink.png" id="5_chwn1"]
-[ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="5_u7krg"]
-[ext_resource type="Texture2D" uid="uid://l0tdju1hh1gk" path="res://Sprites/Background.png" id="6_tx0tn"]
-[ext_resource type="Script" uid="uid://bok6qvis3qrhs" path="res://Scripts/health_points.gd" id="7_2ooml"]
-[ext_resource type="Texture2D" uid="uid://b2b21te70ugvg" path="res://Sprites/ShaderTextures/Tex_colorful2.png" id="7_hvaui"]
-[ext_resource type="Texture2D" uid="uid://d3xnjh578qe5k" path="res://Sprites/HandsHandsHands/11111.png" id="7_p20hg"]
-[ext_resource type="Script" uid="uid://3lc7ury3ehhi" path="res://Scenes/camera_controller.gd" id="9_he4j0"]
-[ext_resource type="AudioStream" uid="uid://t3wmttj2cesx" path="res://Sound/Loyalty Freak Music - BLEEPS AND BLOOPS - 05 Bloop is for critical thinking.mp3" id="14_85gyg"]
-[ext_resource type="Script" uid="uid://if53av1a05hk" path="res://Scripts/speech_manager.gd" id="14_gwne5"]
-[ext_resource type="Script" uid="uid://baehflcip67cu" path="res://Scripts/score_manager.gd" id="15_c32x4"]
-[ext_resource type="Material" uid="uid://btw7ce16xm7je" path="res://Materials & Shaders/outline_red.tres" id="16_1nvmp"]
-[ext_resource type="PackedScene" uid="uid://bynfxd41ak4xu" path="res://Scenes/Prefabs/score_counter.tscn" id="16_fg7i4"]
-[ext_resource type="Texture2D" uid="uid://d2qoxqbgscm3" path="res://Sprites/HandsHandsHands/00101.png" id="17_el1jj"]
-[ext_resource type="PackedScene" uid="uid://c0xu4pfwbuv0v" path="res://Scenes/floating_trash_talk.tscn" id="18_hpu6p"]
+[ext_resource type="Script" uid="uid://dr1rbii4fgoiu" path="res://Scripts/mob_scene.gd" id="1_6orbg"]
+[ext_resource type="PackedScene" uid="uid://ppwdgvi8f7v3" path="res://Scenes/Prefabs/enemy.tscn" id="2_2d8hh"]
+[ext_resource type="Texture2D" uid="uid://l0tdju1hh1gk" path="res://Sprites/Background.png" id="3_dmi58"]
+[ext_resource type="Shader" uid="uid://c5tvrkvsyna53" path="res://Materials & Shaders/shader.gdshader" id="4_gy8kc"]
+[ext_resource type="Texture2D" uid="uid://cayo7y041i06a" path="res://Sprites/ShaderTextures/Tex_pink.png" id="5_uhmke"]
+[ext_resource type="Texture2D" uid="uid://d3xnjh578qe5k" path="res://Sprites/HandsHandsHands/11111.png" id="6_ux5uk"]
+[ext_resource type="Script" uid="uid://bok6qvis3qrhs" path="res://Scripts/health_points.gd" id="7_kwc5q"]
+[ext_resource type="Texture2D" uid="uid://bk6hm8x04ypg0" path="res://Sprites/Heart.png" id="8_ht206"]
+[ext_resource type="Script" uid="uid://3lc7ury3ehhi" path="res://Scenes/camera_controller.gd" id="9_o5y7g"]
+[ext_resource type="Texture2D" uid="uid://b2b21te70ugvg" path="res://Sprites/ShaderTextures/Tex_colorful2.png" id="10_umkbp"]
+[ext_resource type="Script" uid="uid://dothh3t7j2vqx" path="res://Scripts/player.gd" id="11_ghhhi"]
+[ext_resource type="PackedScene" uid="uid://c6v0k1y27otru" path="res://Scenes/Prefabs/projectile.tscn" id="12_46b27"]
+[ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="13_0ekev"]
+[ext_resource type="Script" uid="uid://if53av1a05hk" path="res://Scripts/speech_manager.gd" id="14_ku0jj"]
+[ext_resource type="PackedScene" uid="uid://c0xu4pfwbuv0v" path="res://Scenes/floating_trash_talk.tscn" id="15_7qydu"]
+[ext_resource type="Material" uid="uid://btw7ce16xm7je" path="res://Materials & Shaders/outline_red.tres" id="16_sb6hd"]
+[ext_resource type="Texture2D" uid="uid://d2qoxqbgscm3" path="res://Sprites/HandsHandsHands/00101.png" id="17_wkfss"]
+[ext_resource type="AudioStream" uid="uid://t3wmttj2cesx" path="res://Sound/Loyalty Freak Music - BLEEPS AND BLOOPS - 05 Bloop is for critical thinking.mp3" id="18_27jmo"]
+[ext_resource type="Script" uid="uid://baehflcip67cu" path="res://Scripts/score_manager.gd" id="19_7jepj"]
+[ext_resource type="PackedScene" uid="uid://bynfxd41ak4xu" path="res://Scenes/Prefabs/score_counter.tscn" id="20_nrlvn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wjtap"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p20hg"]
-shader = ExtResource("4_wjtap")
-shader_parameter/scrollingTexture = ExtResource("5_chwn1")
+shader = ExtResource("4_gy8kc")
+shader_parameter/scrollingTexture = ExtResource("5_uhmke")
 shader_parameter/textureScale = Vector2(1, 1)
 shader_parameter/angle = 45.0
 shader_parameter/textureSpeed = 0.2000004845000003
@@ -119,7 +119,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_chwn1"]
 shader = SubResource("Shader_p20hg")
-shader_parameter/scrollingTexture = ExtResource("5_chwn1")
+shader_parameter/scrollingTexture = ExtResource("5_uhmke")
 shader_parameter/textureScale = Vector2(1, 1)
 shader_parameter/angle = 45.0
 shader_parameter/textureSpeed = 0.1
@@ -130,7 +130,7 @@ shader_parameter/rounded = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wkiwa"]
 shader = SubResource("Shader_p20hg")
-shader_parameter/scrollingTexture = ExtResource("7_hvaui")
+shader_parameter/scrollingTexture = ExtResource("10_umkbp")
 shader_parameter/textureScale = Vector2(1, 1)
 shader_parameter/angle = 45.0
 shader_parameter/textureSpeed = 0.1
@@ -143,6 +143,16 @@ shader_parameter/rounded = true
 radius = 63.178833
 height = 126.357666
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_el1jj"]
+shader = ExtResource("4_gy8kc")
+shader_parameter/textureScale = Vector2(1, 1)
+shader_parameter/angle = 45.0
+shader_parameter/textureSpeed = 0.1
+shader_parameter/thickness = 1.0
+shader_parameter/tolerance = 0.0
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
+
 [sub_resource type="Curve2D" id="Curve2D_u7krg"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -957.82117, -540.808, 0, 0, 0, 0, 964.17883, -538.808, 0, 0, 0, 0, 961.17883, 540.192, 0, 0, 0, 0, -963.82117, 538.192, 0, 0, 0, 0, -957.82117, -540.808)
@@ -150,50 +160,59 @@ _data = {
 point_count = 5
 
 [node name="MainScene" type="Node2D" unique_id=969649068]
-position = Vector2(565.82117, 322.808)
-script = ExtResource("1_6whob")
-mob_scene = ExtResource("2_6whob")
+position = Vector2(566, 323)
+script = ExtResource("1_6orbg")
+mob_scene = ExtResource("2_2d8hh")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1120033975]
 material = SubResource("ShaderMaterial_wjtap")
 position = Vector2(-29.821167, -5.808014)
 scale = Vector2(1.1136633, 1.1136633)
-texture = ExtResource("6_tx0tn")
+texture = ExtResource("3_dmi58")
 
 [node name="HealthPoints" type="Sprite2D" parent="Background" unique_id=1490233156]
 material = SubResource("ShaderMaterial_p20hg")
-position = Vector2(413.94922, -251.42245)
+position = Vector2(-357.3791, -251.42245)
 scale = Vector2(0.33186927, 0.325)
-texture = ExtResource("7_p20hg")
-script = ExtResource("7_2ooml")
+texture = ExtResource("6_ux5uk")
+script = ExtResource("7_kwc5q")
 
 [node name="Health" type="Sprite2D" parent="Background/HealthPoints" unique_id=1921249763]
 material = SubResource("ShaderMaterial_chwn1")
 position = Vector2(-18.079496, 116.92319)
 scale = Vector2(0.45720318, 0.56592065)
-texture = ExtResource("4_v7gqg")
+texture = ExtResource("8_ht206")
 
 [node name="ScoreMarker" type="Node2D" parent="Background" unique_id=1726391688]
-position = Vector2(-402.27597, -299.9111)
+position = Vector2(193.05653, -256.81012)
+scale = Vector2(0.8979375, 0.8979375)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background/ScoreMarker" unique_id=1736993808]
-offset_right = 10.0
-offset_bottom = 25.0
+custom_maximum_size = Vector2(10, 20)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -10.0
+offset_top = -29.0
+offset_bottom = -9.0
+grow_horizontal = 0
+scale = Vector2(8.000005, 3.258142)
+alignment = 2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
-script = ExtResource("9_he4j0")
+script = ExtResource("9_o5y7g")
 
 [node name="Player" type="Area2D" parent="." unique_id=728170765]
 material = SubResource("ShaderMaterial_wkiwa")
-script = ExtResource("2_hh5uf")
-projectile = ExtResource("4_u7krg")
+script = ExtResource("11_ghhhi")
+projectile = ExtResource("12_46b27")
 metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player" unique_id=2067783757]
 use_parent_material = true
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_u7krg")
+texture = ExtResource("13_0ekev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=234021122]
 shape = SubResource("CapsuleShape2D_g4v7s")
@@ -201,21 +220,19 @@ shape = SubResource("CapsuleShape2D_g4v7s")
 [node name="AudioListener2D" type="AudioListener2D" parent="Player" unique_id=1563518495]
 current = true
 
-[node name="MiddleFingerManager" type="Node2D" parent="." unique_id=650370186]
+[node name="MiddleFingerManager" type="Node2D" parent="." unique_id=1319469186]
 position = Vector2(-243, 116)
-script = ExtResource("14_gwne5")
-floating_text_scene = ExtResource("18_hpu6p")
+script = ExtResource("14_ku0jj")
+floating_text_scene = ExtResource("15_7qydu")
 tutorial_text_array = Array[String](["Hello fellow hand.", "I'm your biggest enemy!", "But I have to teach you how to play this game. Too bad.", "\"Q\" \"W\" \"E\" \"R\" \"SPACE\"", "Each corresponds to a finger", "For red and green hands, you need to match.", "For orange hands, you need to beat.", "What do you mean how to beat?", "Just like Rock Paper Scissor."])
-hate_text_array = Array[String](["Are you sleeping?", "A chicken plays better than you with their peak.", "This is not how we humans in the 21 century should play.", "Good job :) Well play :) You are so great :)", "I think you will do better by hitting the keyborad randomly.", "Wow, just wow.", "You are really bad, do you know that?", "Maybe you should consider to do something else.", "I'm sorry, did I hurt you?", "Boo!", "My grandma throws hands better than you!", "Oh you think this is good? You should have seen me in my prime!", "Wow you're really good at a video game! You still suck at everything else though.", "So you like being insulted? That's awesome, I love making fun of people like you!"])
 
-[node name="FakeMiddleFinger" type="Sprite2D" parent="MiddleFingerManager" unique_id=848932006]
-material = ExtResource("16_1nvmp")
+[node name="FakeMiddleFinger" type="Sprite2D" parent="MiddleFingerManager" unique_id=1063625696]
+material = ExtResource("16_sb6hd")
 position = Vector2(13.178864, 99.191986)
 scale = Vector2(0.50333333, 0.50333333)
-texture = ExtResource("17_el1jj")
+texture = ExtResource("17_wkfss")
 
-[node name="NewTextTimer" type="Timer" parent="MiddleFingerManager" unique_id=569799854]
-wait_time = 3.0
+[node name="NewTextTimer" type="Timer" parent="MiddleFingerManager" unique_id=501669788]
 one_shot = true
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1749342172]
@@ -225,6 +242,7 @@ wait_time = 10.0
 one_shot = true
 
 [node name="MobPath" type="Path2D" parent="." unique_id=197598557]
+material = SubResource("ShaderMaterial_el1jj")
 curve = SubResource("Curve2D_u7krg")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" unique_id=998614018]
@@ -235,13 +253,13 @@ rotation = 0.0010405824
 wait_time = 10.0
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=422259076]
-stream = ExtResource("14_85gyg")
+stream = ExtResource("18_27jmo")
 volume_db = -10.0
 autoplay = true
 
 [node name="ScoreManager" type="Node" parent="." unique_id=1020126724]
-script = ExtResource("15_c32x4")
-score_counter = ExtResource("16_fg7i4")
+script = ExtResource("19_7jepj")
+score_counter = ExtResource("20_nrlvn")
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="gameOver" from="Player" to="Player" method="_on_game_over"]

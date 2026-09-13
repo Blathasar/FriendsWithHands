@@ -25,8 +25,5 @@ func _on_exist_timer_timeout() -> void:
 	else:
 		randomize_direction()
 	
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	randomize_direction()
-	
 func randomize_direction():
 	direction = Vector2(randf_range(-1,1),randf_range(-1,1)).normalized()
