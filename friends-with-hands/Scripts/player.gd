@@ -4,6 +4,8 @@ extends Area2D
 
 signal hit
 signal gameOver
+signal on_shoot
+
 var health: int
 var finger_positions: Array[bool] = [5]
 var texture
@@ -54,6 +56,7 @@ func shoot():
 	proj.global_rotation = global_rotation
 	proj.direction = direction
 
+	on_shoot.emit()
 	
 
 func _on_body_entered(body: Node2D) -> void:

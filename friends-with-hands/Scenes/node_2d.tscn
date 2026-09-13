@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ppwdgvi8f7v3" path="res://Scenes/Prefabs/enemy.tscn" id="2_6whob"]
 [ext_resource type="Script" uid="uid://dothh3t7j2vqx" path="res://Scripts/player.gd" id="2_hh5uf"]
 [ext_resource type="PackedScene" uid="uid://c6v0k1y27otru" path="res://Scenes/Prefabs/projectile.tscn" id="4_u7krg"]
+[ext_resource type="Texture2D" uid="uid://bk6hm8x04ypg0" path="res://Sprites/Heart.png" id="4_v7gqg"]
 [ext_resource type="Shader" uid="uid://c5tvrkvsyna53" path="res://Materials & Shaders/shader.gdshader" id="4_wjtap"]
 [ext_resource type="Texture2D" uid="uid://cayo7y041i06a" path="res://Sprites/ShaderTextures/Tex_pink.png" id="5_chwn1"]
 [ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="5_u7krg"]
@@ -109,6 +110,17 @@ void fragment() {
 	}
 }"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chwn1"]
+shader = SubResource("Shader_p20hg")
+shader_parameter/scrollingTexture = ExtResource("5_chwn1")
+shader_parameter/textureScale = Vector2(1, 1)
+shader_parameter/angle = 45.0
+shader_parameter/textureSpeed = 0.1
+shader_parameter/thickness = 8.00000038
+shader_parameter/tolerance = 0.3350000159125
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wkiwa"]
 shader = SubResource("Shader_p20hg")
 shader_parameter/scrollingTexture = ExtResource("7_hvaui")
@@ -145,6 +157,12 @@ position = Vector2(-432.82114, -293.80804)
 scale = Vector2(0.33186927, 0.325)
 texture = ExtResource("7_p20hg")
 script = ExtResource("7_2ooml")
+
+[node name="Health" type="Sprite2D" parent="Background/HealthPoints" unique_id=1921249763]
+material = SubResource("ShaderMaterial_chwn1")
+position = Vector2(-18.079496, 116.92319)
+scale = Vector2(0.45720318, 0.56592065)
+texture = ExtResource("4_v7gqg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
 script = ExtResource("9_he4j0")
@@ -183,6 +201,7 @@ rotation = 0.0010405824
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="gameOver" from="Player" to="Player" method="_on_game_over"]
+[connection signal="on_shoot" from="Player" to="Camera2D" method="_on_player_on_shoot"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

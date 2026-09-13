@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+signal mob_die
 # Jun: Particle Varible
 @onready var particle_manager= $ParticleManger 
 
@@ -24,3 +24,8 @@ func _process(delta):
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	queue_free()
 	
+
+
+
+func _on_tree_exiting() -> void:
+	mob_die.emit()

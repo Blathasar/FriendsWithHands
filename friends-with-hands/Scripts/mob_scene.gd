@@ -1,4 +1,7 @@
 extends Node2D
+
+@onready var camera_node = $Camera2D
+
 @export var mob_scene: PackedScene
 var score
 
@@ -45,4 +48,6 @@ func _on_mob_timer_timeout() -> void:
 	mob.setup(global_position)
 	add_child(mob)
 	
+	# Jun: connect mod_die signal to cameranode
+	mob.mob_die.connect(camera_node._on_mob_dying)
 	
