@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://t3wmttj2cesx"
+path="res://.godot/imported/Loyalty Freak Music - BLEEPS AND BLOOPS - 05 Bloop is for critical thinking.mp3-656c9ac5742d9909799a37854e2404e3.mp3str"
+
+[deps]
+
+source_file="res://Sound/Loyalty Freak Music - BLEEPS AND BLOOPS - 05 Bloop is for critical thinking.mp3"
+dest_files=["res://.godot/imported/Loyalty Freak Music - BLEEPS AND BLOOPS - 05 Bloop is for critical thinking.mp3-656c9ac5742d9909799a37854e2404e3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

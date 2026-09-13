@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b2b21te70ugvg" path="res://Sprites/ShaderTextures/Tex_colorful2.png" id="7_hvaui"]
 [ext_resource type="Texture2D" uid="uid://d3xnjh578qe5k" path="res://Sprites/HandsHandsHands/11111.png" id="7_p20hg"]
 [ext_resource type="Script" uid="uid://3lc7ury3ehhi" path="res://Scenes/camera_controller.gd" id="9_he4j0"]
+[ext_resource type="AudioStream" uid="uid://t3wmttj2cesx" path="res://Sound/Loyalty Freak Music - BLEEPS AND BLOOPS - 05 Bloop is for critical thinking.mp3" id="14_85gyg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wjtap"]
 
@@ -149,11 +150,13 @@ mob_scene = ExtResource("2_6whob")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1120033975]
 material = SubResource("ShaderMaterial_wjtap")
+position = Vector2(-29.821167, -5.808014)
+scale = Vector2(1.1136633, 1.1136633)
 texture = ExtResource("6_tx0tn")
 
 [node name="HealthPoints" type="Sprite2D" parent="Background" unique_id=1490233156]
 material = SubResource("ShaderMaterial_p20hg")
-position = Vector2(-432.82114, -293.80804)
+position = Vector2(-357.3791, -251.42245)
 scale = Vector2(0.33186927, 0.325)
 texture = ExtResource("7_p20hg")
 script = ExtResource("7_2ooml")
@@ -182,6 +185,9 @@ texture = ExtResource("5_u7krg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=234021122]
 shape = SubResource("CapsuleShape2D_g4v7s")
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Player" unique_id=1563518495]
+current = true
+
 [node name="MobTimer" type="Timer" parent="." unique_id=1749342172]
 wait_time = 3.0
 
@@ -198,6 +204,11 @@ position = Vector2(-957.82117, -540.808)
 rotation = 0.0010405824
 
 [node name="ScoreTimer" type="Timer" parent="." unique_id=841744959]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=422259076]
+stream = ExtResource("14_85gyg")
+volume_db = -1.94
+autoplay = true
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="gameOver" from="Player" to="Player" method="_on_game_over"]

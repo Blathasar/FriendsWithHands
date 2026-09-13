@@ -1,0 +1,7 @@
+Credit:
+	Camera Shake(Learning Material)
+		https://www.reddit.com/r/godot/comments/17e8s6f/screencamera_shake_2dgodot_4/
+		https://kidscancode.org/godot_recipes/4.x/2d/screen_shake/index.html
+	Outline Shader(Uused under CC0)
+		https://godotshaders.com/shader/various-canvas-outlines/\
+	Music
