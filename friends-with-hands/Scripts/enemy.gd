@@ -14,6 +14,7 @@ func setup(player_pos:Vector2):
 	var path = "res://Sprites/HandsHandsHands/" + HandLogic.convert_finger_positions_to_string(finger_positions) + ".png"
 	texture = load(path)
 	if (texture != null):
+		sprite_node= $AnimatedSprite2D
 		sprite_node.texture = texture
 
 # Called when the node enters the scene tree for the first time.

@@ -4,8 +4,7 @@ var particle_scene
 var hand_texture
 
 func _ready() -> void:
-	particle_scene = preload("res://Scenes/Prefabs/particle.tscn"
-	)
+	particle_scene = preload("res://Scenes/Prefabs/particle.tscn")
 	var spirte_node = $"../AnimatedSprite2D"
 	hand_texture = spirte_node.texture
 	
