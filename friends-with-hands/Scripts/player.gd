@@ -7,7 +7,7 @@ signal gameOver
 signal on_shoot
 
 var health: int
-var finger_positions: Array[bool] = [5]
+var finger_positions: Array[bool]
 var texture
 
 # Called when the node enters the scene tree for the first time.
@@ -44,13 +44,14 @@ func _input(event: InputEvent) -> void:
 		
 
 func shoot():
-	print(HandLogic.convert_finger_positions_to_handsign(finger_positions))
+	#print(HandLogic.convert_finger_positions_to_handsign(finger_positions))
 	var proj = projectile.instantiate()
 
 	var direction = Vector2.RIGHT.rotated(global_rotation)
 
 	get_tree().current_scene.add_child(proj)
 	
+	proj.finger_positions = finger_positions
 	proj.change_texture(texture)
 	proj.global_position = global_position + direction * 50
 	proj.global_rotation = global_rotation

@@ -30,12 +30,31 @@ static func convert_finger_positions_to_string(finger_positions:Array[bool]) -> 
 			finger_string += "0"
 	
 	return finger_string
+
 		
-static func beatsHand(attackingHandSign: HandSign, defendingHandSign: HandSign) -> bool:
+static func beats_hand(attackingHandSign: HandSign, defendingHandSign: HandSign) -> bool:
 	if (attackingHandSign == HandSign.ROCK && 
 	defendingHandSign == HandSign.SCIZZOR) || (attackingHandSign == HandSign.PAPER &&
-	defendingHandSign == HandSign.ROCK) || (attackingHandSign == HandSign.SCIZZOR && defendingHandSign == HandSign.PAPER):
+	defendingHandSign == HandSign.ROCK) || (attackingHandSign == HandSign.SCIZZOR && 
+	defendingHandSign == HandSign.PAPER) || (attackingHandSign == HandSign.THUMBS_UP && 
+	defendingHandSign == HandSign.THUMBS_UP):
 			return true
 	return false
 
-	
+
+static func generate_random_finger_positions() -> Array[bool]:
+	var finger_positions: Array[bool] = [false,false,false,false,false]
+	for n in range(0,5):
+		if randi() % 2 == 1:
+			finger_positions[n] = true
+		else:
+			finger_positions[n] = false
+	print(finger_positions)
+	return finger_positions
+
+static func have_same_finger_positions(finger_positions1: Array[bool], finger_positions2: Array[bool]) -> bool:
+	for	n in range (0,5):
+		if finger_positions1[n] != finger_positions2[n]:
+			print(finger_positions1[n], " is not equals to ", finger_positions2[n], " at index ", n)
+			return false
+	return true

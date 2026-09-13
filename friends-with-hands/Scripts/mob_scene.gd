@@ -36,7 +36,10 @@ func _on_score_timer_timeout() -> void:
 func _on_mob_timer_timeout() -> void:
 	# Create a new instance of the Mob scene.
 	var mob = mob_scene.instantiate()
-
+	
+	# Choose random finger_positions
+	mob.finger_positions = HandLogic.generate_random_finger_positions()
+	
 	# Choose a random location on Path2D.
 	var mob_spawn_location = $MobPath/MobSpawnLocation
 	mob_spawn_location.progress_ratio = randf()
