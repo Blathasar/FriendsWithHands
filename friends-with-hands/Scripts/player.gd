@@ -14,7 +14,7 @@ var texture
 func _ready() -> void:
 	finger_positions = [false,false,false,false,false]
 	show()
-	health = 3
+	health = 5
 	$CollisionShape2D.disabled = false
 
 
@@ -42,7 +42,10 @@ func _input(event: InputEvent) -> void:
 		shoot()
 		
 		
-
+func change_hp(points:int):
+	health += points
+	$"../Background/HealthPoints".loadTextureBasedOnHealth(health)
+	
 func shoot():
 	#print(HandLogic.convert_finger_positions_to_handsign(finger_positions))
 	var proj = projectile.instantiate()
@@ -63,14 +66,14 @@ func shoot():
 func _on_body_entered(body: Node2D) -> void:
 	emit_signal("hit")
 	body.queue_free()
-	health -= 1
-	#Jun - change HP icon
-	$"../Background/HealthPoints".loadTextureBasedOnHealth(health)
+	change_hp(-1)
+
 	#Jun - Sound Effect
 	body.particle_manager.emitParticle()
 	
 	if health <= 0:
-		emit_signal("gameOver")	
+		emit_signal("gameOver")
+		get_tree().reload_current_scene()
 
 
 func _on_game_over() -> void:
