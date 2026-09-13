@@ -158,7 +158,7 @@ texture = ExtResource("6_tx0tn")
 
 [node name="HealthPoints" type="Sprite2D" parent="Background" unique_id=1490233156]
 material = SubResource("ShaderMaterial_p20hg")
-position = Vector2(-357.3791, -251.42245)
+position = Vector2(413.94922, -251.42245)
 scale = Vector2(0.33186927, 0.325)
 texture = ExtResource("7_p20hg")
 script = ExtResource("7_2ooml")
@@ -170,20 +170,11 @@ scale = Vector2(0.45720318, 0.56592065)
 texture = ExtResource("4_v7gqg")
 
 [node name="ScoreMarker" type="Node2D" parent="Background" unique_id=1726391688]
-position = Vector2(193.05653, -256.81012)
-scale = Vector2(0.8979375, 0.8979375)
+position = Vector2(-402.27597, -299.9111)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Background/ScoreMarker" unique_id=1736993808]
-custom_maximum_size = Vector2(10, 20)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -10.0
-offset_top = -29.0
-offset_bottom = -9.0
-grow_horizontal = 0
-scale = Vector2(8.000005, 3.258142)
-alignment = 2
+offset_right = 10.0
+offset_bottom = 25.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
 script = ExtResource("9_he4j0")
