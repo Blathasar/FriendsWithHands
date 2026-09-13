@@ -55,6 +55,5 @@ static func generate_random_finger_positions() -> Array[bool]:
 static func have_same_finger_positions(finger_positions1: Array[bool], finger_positions2: Array[bool]) -> bool:
 	for	n in range (0,5):
 		if finger_positions1[n] != finger_positions2[n]:
-			print(finger_positions1[n], " is not equals to ", finger_positions2[n], " at index ", n)
 			return false
 	return true
