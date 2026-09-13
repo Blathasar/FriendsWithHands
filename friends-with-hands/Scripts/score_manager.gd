@@ -26,7 +26,7 @@ func _visualize_score():
 func loadTextureBasedOnHealth(HP:int):
 	match HP:
 		0:
-			texture = load("res://Sprites/HandsHandsHands/00000.png")
+			texture = load("res://Sprites/HandsHandsHands/11111.png")
 		1:
 			texture = load("res://Sprites/HandsHandsHands/00010.png")
 		2:
@@ -35,6 +35,5 @@ func loadTextureBasedOnHealth(HP:int):
 			texture = load("res://Sprites/HandsHandsHands/01110.png")
 		4:
 			texture = load("res://Sprites/HandsHandsHands/11110.png")
-		5:
-			texture = load("res://Sprites/HandsHandsHands/11111.png")	
+				
 	current_score_counter.texture = texture
