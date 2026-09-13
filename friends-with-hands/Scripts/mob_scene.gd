@@ -10,7 +10,6 @@ var player_position: Vector2
 func _ready() -> void:
 	player_position = $Player.global_position
 	new_game()
-	spawn_specific_mob([false,false,false,true,false])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

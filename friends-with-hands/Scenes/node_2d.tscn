@@ -215,7 +215,7 @@ scale = Vector2(0.50333333, 0.50333333)
 texture = ExtResource("17_el1jj")
 
 [node name="NewTextTimer" type="Timer" parent="MiddleFingerManager" unique_id=569799854]
-wait_time = 3.0
+wait_time = 5.0
 one_shot = true
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1749342172]
