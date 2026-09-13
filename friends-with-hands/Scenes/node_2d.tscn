@@ -5,19 +5,118 @@
 [ext_resource type="Script" uid="uid://dothh3t7j2vqx" path="res://Scripts/player.gd" id="2_hh5uf"]
 [ext_resource type="PackedScene" uid="uid://c6v0k1y27otru" path="res://Scenes/Prefabs/projectile.tscn" id="4_u7krg"]
 [ext_resource type="Shader" uid="uid://c5tvrkvsyna53" path="res://Materials & Shaders/shader.gdshader" id="4_wjtap"]
+[ext_resource type="Texture2D" uid="uid://cayo7y041i06a" path="res://Sprites/ShaderTextures/Tex_pink.png" id="5_chwn1"]
 [ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="5_u7krg"]
 [ext_resource type="Texture2D" uid="uid://l0tdju1hh1gk" path="res://Sprites/Background.png" id="6_tx0tn"]
+[ext_resource type="Script" uid="uid://bok6qvis3qrhs" path="res://Scripts/health_points.gd" id="7_2ooml"]
+[ext_resource type="Texture2D" uid="uid://b2b21te70ugvg" path="res://Sprites/ShaderTextures/Tex_colorful2.png" id="7_hvaui"]
+[ext_resource type="Texture2D" uid="uid://d3xnjh578qe5k" path="res://Sprites/HandsHandsHands/11111.png" id="7_p20hg"]
+[ext_resource type="Script" uid="uid://3lc7ury3ehhi" path="res://Scenes/camera_controller.gd" id="9_he4j0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wjtap"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkiwa"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p20hg"]
 shader = ExtResource("4_wjtap")
-shader_parameter/scrollingTexture = ExtResource("6_tx0tn")
+shader_parameter/scrollingTexture = ExtResource("5_chwn1")
+shader_parameter/textureScale = Vector2(1, 1)
+shader_parameter/angle = 45.0
+shader_parameter/textureSpeed = 0.2000004845000003
+shader_parameter/thickness = 8.00000038
+shader_parameter/tolerance = 0.50000002375
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
+
+[sub_resource type="Shader" id="Shader_p20hg"]
+code = "shader_type canvas_item;
+
+// The texture to scroll with.
+uniform sampler2D scrollingTexture: hint_default_white;
+// The scroll texture scale.
+uniform vec2 textureScale = vec2(1.0);
+// Angle to scroll towards. In degrees. Starts at the right.
+uniform float angle: hint_range(0.0, 360.0) = 45.0;
+// Speed to scroll at.
+uniform float textureSpeed: hint_range(-10.0, 10.0) = 0.1;
+// Outline thickness.
+uniform float thickness: hint_range(0.0, 100.0) = 1.0;
+// Used to compensate for alpha values.
+uniform float tolerance: hint_range(0.0, 0.999) = 0.0;
+// If on will draw at diagonals. Off is mainly for pixel art but you do you.
+uniform bool diagonals = true;
+// If diagonals are checked will check for half pixels so it rounds the outline a bit more.
+uniform bool rounded = true;
+
+// Compensate UV for outline.
+void vertex() {
+	VERTEX = vec2(VERTEX.x * (1.0 + TEXTURE_PIXEL_SIZE.x * thickness * 2.0), VERTEX.y * (1.0 + TEXTURE_PIXEL_SIZE.y * thickness * 2.0));
+}
+
+// Checks a fragment for the edge of an uv.
+bool border(vec2 uv) {
+	vec2 uvBorder = abs(uv - vec2(0.5));
+	return max(step(0.5, uvBorder.x), step(0.5, uvBorder.y)) > 0.0;
+}
+
+// Gets alpha of given fragment if not near the edge.
+float get_alpha(sampler2D tex, vec2 uv){
+	float res = 0.0;
+	if (!border(uv)) {
+		res = texture(tex, uv).a;
+	}
+	return res;
+}
+
+// Checks for neighboring pixels.
+float in_range(vec2 size, sampler2D tex, vec2 uv) {
+	float res = 0.0;
+	for (float i = -1.0; i < 2.0; i += 2.0) {
+		res += get_alpha(tex, uv + vec2(i * size.x, 0.0));
+		res += get_alpha(tex, uv + vec2(0.0, i * size.y));
+		if (diagonals) {
+			for (float j = -1.0; j < 2.0; j += 2.0) {
+				res += get_alpha(tex, uv + vec2(i * size.x, j * size.y));
+				if (rounded) {
+					res += get_alpha(tex, uv + vec2(i * size.x, j * size.y * 0.5));
+				}
+			}
+		}
+	}
+	return res;
+}
+
+void fragment() {
+	if (thickness > 0.0) {
+		// Correct image size to for outline in frame.
+		vec2 uv = UV;
+		uv -= vec2(0.5);
+		float edge = TEXTURE_PIXEL_SIZE.x * thickness * 2.0;
+		uv = uv + uv * edge;
+		uv += vec2(0.5);
+		
+		// Apply outline.
+		vec4 newColor = texture(TEXTURE, uv);
+		if (newColor.a <= tolerance || border(uv)) {
+			// Correct angle to start at right and convert to radians.
+			float radiansAngle = radians(angle + 180.0);
+			// Make a vector out of the angle.
+			vec2 vector = vec2(cos(radiansAngle), sin(radiansAngle));
+			float outline = in_range(TEXTURE_PIXEL_SIZE * thickness, TEXTURE, uv);
+			vec4 textureColor = texture(scrollingTexture, fract(UV / textureScale + vector * textureSpeed * TIME));
+			vec4 finalColor = step(1.0 - tolerance, outline) * textureColor;
+			newColor = finalColor;
+		}
+		COLOR = newColor;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wkiwa"]
+shader = SubResource("Shader_p20hg")
+shader_parameter/scrollingTexture = ExtResource("7_hvaui")
 shader_parameter/textureScale = Vector2(1, 1)
 shader_parameter/angle = 45.0
 shader_parameter/textureSpeed = 0.1
-shader_parameter/thickness = 5.8250002766875
-shader_parameter/tolerance = 0.0
+shader_parameter/thickness = 8.00000038
+shader_parameter/tolerance = 0.50000002375
 shader_parameter/diagonals = true
 shader_parameter/rounded = true
 
@@ -36,11 +135,19 @@ position = Vector2(565.82117, 322.808)
 script = ExtResource("1_6whob")
 mob_scene = ExtResource("2_6whob")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
-
-[node name="Background" type="Sprite2D" parent="Camera2D" unique_id=1120033975]
+[node name="Background" type="Sprite2D" parent="." unique_id=1120033975]
 material = SubResource("ShaderMaterial_wjtap")
 texture = ExtResource("6_tx0tn")
+
+[node name="HealthPoints" type="Sprite2D" parent="Background" unique_id=1490233156]
+material = SubResource("ShaderMaterial_p20hg")
+position = Vector2(-432.82114, -293.80804)
+scale = Vector2(0.33186927, 0.325)
+texture = ExtResource("7_p20hg")
+script = ExtResource("7_2ooml")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
+script = ExtResource("9_he4j0")
 
 [node name="Player" type="Area2D" parent="." unique_id=728170765]
 material = SubResource("ShaderMaterial_wkiwa")

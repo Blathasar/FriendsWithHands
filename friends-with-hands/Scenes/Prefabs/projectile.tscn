@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://c6v0k1y27otru"]
 
 [ext_resource type="Script" uid="uid://dpt7nggh7k1wa" path="res://Scripts/projectile.gd" id="1_hlkwl"]
+[ext_resource type="Shader" uid="uid://c5tvrkvsyna53" path="res://Materials & Shaders/shader.gdshader" id="2_yktai"]
+[ext_resource type="Texture2D" uid="uid://dsd7mpqysmdv2" path="res://Sprites/ShaderTextures/Tex_colorful.png" id="3_wuo0u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hvaui"]
+shader = ExtResource("2_yktai")
+shader_parameter/scrollingTexture = ExtResource("3_wuo0u")
+shader_parameter/textureScale = Vector2(1, 1)
+shader_parameter/angle = 45.0
+shader_parameter/textureSpeed = 0.1
+shader_parameter/thickness = 8.00000038
+shader_parameter/tolerance = 0.50000002375
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
 radius = 12.600006
@@ -13,6 +26,7 @@ speed = 1000.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=1811440000]
+material = SubResource("ShaderMaterial_hvaui")
 rotation = 1.5707964
 scale = Vector2(0.3, 0.3)
 

@@ -60,6 +60,9 @@ func _on_body_entered(body: Node2D) -> void:
 	emit_signal("hit")
 	body.queue_free()
 	health -= 1
+	#Jun - change HP icon
+	$"../Background/HealthPoints".loadTextureBasedOnHealth(health)
+	
 	if health <= 0:
 		emit_signal("gameOver")	
 

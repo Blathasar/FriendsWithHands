@@ -2,8 +2,23 @@
 
 [ext_resource type="Script" uid="uid://bs75tovgdmv3y" path="res://Scripts/particle.gd" id="1_1x75o"]
 [ext_resource type="Texture2D" uid="uid://cp6nnqwiunxy6" path="res://Sprites/00000.png" id="1_cftjp"]
+[ext_resource type="Shader" uid="uid://c5tvrkvsyna53" path="res://Materials & Shaders/shader.gdshader" id="1_djv1h"]
+[ext_resource type="Texture2D" uid="uid://bkxqrlxb1wnrs" path="res://Sprites/ShaderTextures/Tex_red.png" id="2_82jvk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yktai"]
+shader = ExtResource("1_djv1h")
+shader_parameter/scrollingTexture = ExtResource("2_82jvk")
+shader_parameter/textureScale = Vector2(1, 1)
+shader_parameter/angle = 45.0
+shader_parameter/textureSpeed = 0.1
+shader_parameter/thickness = 8.00000038
+shader_parameter/tolerance = 0.50000002375
+shader_parameter/diagonals = true
+shader_parameter/rounded = true
 
 [node name="DeathParticle" type="CPUParticles2D" unique_id=2044906165]
+material = SubResource("ShaderMaterial_yktai")
+emitting = false
 texture = ExtResource("1_cftjp")
 lifetime = 2.0
 one_shot = true

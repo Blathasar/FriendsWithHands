@@ -17,3 +17,4 @@ func _on_body_entered(body: Node2D) -> void:
 	body.queue_free()
 	#Jun -> Trigger particle
 	body.particle_manager.emitParticle()
+	
