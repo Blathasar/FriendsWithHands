@@ -49,7 +49,6 @@ static func generate_random_finger_positions() -> Array[bool]:
 			finger_positions[n] = true
 		else:
 			finger_positions[n] = false
-	print(finger_positions)
 	return finger_positions
 
 static func have_same_finger_positions(finger_positions1: Array[bool], finger_positions2: Array[bool]) -> bool:

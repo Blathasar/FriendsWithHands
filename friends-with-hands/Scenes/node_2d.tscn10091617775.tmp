@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://3lc7ury3ehhi" path="res://Scenes/camera_controller.gd" id="9_he4j0"]
 [ext_resource type="AudioStream" uid="uid://t3wmttj2cesx" path="res://Sound/Loyalty Freak Music - BLEEPS AND BLOOPS - 05 Bloop is for critical thinking.mp3" id="14_85gyg"]
 [ext_resource type="Script" uid="uid://baehflcip67cu" path="res://Scripts/score_manager.gd" id="15_c32x4"]
-[ext_resource type="PackedScene" uid="uid://bynfxd41ak4xu" path="res://Scenes/Prefabs/score_counter.tscn" id="16_fg7i4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wjtap"]
 
@@ -169,22 +168,6 @@ position = Vector2(-18.079496, 116.92319)
 scale = Vector2(0.45720318, 0.56592065)
 texture = ExtResource("4_v7gqg")
 
-[node name="ScoreMarker" type="Node2D" parent="Background" unique_id=1726391688]
-position = Vector2(193.05653, -256.81012)
-scale = Vector2(0.8979375, 0.8979375)
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/ScoreMarker" unique_id=1736993808]
-custom_maximum_size = Vector2(10, 20)
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -10.0
-offset_top = -29.0
-offset_bottom = -9.0
-grow_horizontal = 0
-scale = Vector2(8.000005, 3.258142)
-alignment = 2
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=530082208]
 script = ExtResource("9_he4j0")
 
@@ -231,7 +214,6 @@ autoplay = true
 
 [node name="ScoreManager" type="Node" parent="." unique_id=1020126724]
 script = ExtResource("15_c32x4")
-score_counter = ExtResource("16_fg7i4")
 
 [connection signal="body_entered" from="Player" to="Player" method="_on_body_entered"]
 [connection signal="gameOver" from="Player" to="Player" method="_on_game_over"]

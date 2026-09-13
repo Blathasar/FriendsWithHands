@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bynfxd41ak4xu"]
+
+[ext_resource type="Texture2D" uid="uid://dxxp5ryc6h30h" path="res://Sprites/HandsHandsHands/00000.png" id="1_fubqn"]
+
+[node name="ScoreCounter" type="TextureRect" unique_id=667263296]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_fubqn")

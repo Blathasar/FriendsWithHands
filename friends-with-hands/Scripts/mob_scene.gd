@@ -3,7 +3,6 @@ extends Node2D
 @onready var camera_node = $Camera2D
 
 @export var mob_scene: PackedScene
-var score
 
 var player_position: Vector2
 
@@ -19,22 +18,32 @@ func _process(delta: float) -> void:
 	pass
 
 func new_game():
-	score = 0
 	$StartTimer.start()
 
 func game_over():
 	$MobTimer.stop()
-	$ScoreTimer.stop()
+	$Accelerator.stop()
 
 func _on_start_timer_timeout() -> void:
 	$MobTimer.start()
-	$ScoreTimer.start()
-
-func _on_score_timer_timeout() -> void:
-	score += 1
+	$Accelerator.start()
 
 func _on_mob_timer_timeout() -> void:
 	spawn_random_mob()
+
+
+#For acceleration
+var spawn_interval := 10.0
+var min_spawn_interval := 2.0
+var acceleration := 0.9
+
+func _on_accelerator_timeout() -> void:
+	spawn_interval = max(
+		min_spawn_interval,
+		spawn_interval * acceleration
+	)
+	$MobTimer.wait_time = spawn_interval
+	print($MobTimer.wait_time)
 
 func spawn_random_mob():
 	spawn_specific_mob(HandLogic.generate_random_finger_positions())
@@ -59,3 +68,4 @@ func spawn_specific_mob(finger_positions: Array[bool]):
 	
 	# Jun: connect mod_die signal to cameranode
 	mob.mob_die.connect(camera_node._on_mob_dying)
+	mob.mob_die.connect($ScoreManager._on_mob_dying)
