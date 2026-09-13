@@ -128,5 +128,6 @@ script = ExtResource("1_1x75o")
 death_sound_array = Array[AudioStream]([ExtResource("4_2rdo1"), ExtResource("5_o4p8t"), ExtResource("6_78xop"), ExtResource("7_n5u6n"), ExtResource("8_2nnti")])
 
 [node name="deathsound" type="AudioStreamPlayer2D" parent="." unique_id=97485497]
+max_distance = 4096.0
 
 [connection signal="finished" from="." to="." method="_on_finished"]

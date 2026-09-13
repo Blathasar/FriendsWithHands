@@ -52,7 +52,20 @@ func spawn_specific_mob(finger_positions: Array[bool]):
 
 	# Set the mob's position to the random location.
 	mob.position = mob_spawn_location.position
-
+	
+	# Set the mob material based on type
+	var shader_tex
+	var mob_hand_sign = HandLogic.convert_finger_positions_to_handsign(finger_positions)
+	match mob_hand_sign:
+		HandLogic.HandSign.ROCK or HandLogic.HandSign.SCIZZOR or HandLogic.HandSign.PAPER:
+			shader_tex = load("res://Sprites/ShaderTextures/Tex_orange.png")
+		HandLogic.HandSign.THUMBS_UP:
+			shader_tex = load("res://Sprites/ShaderTextures/Tex_green.png")
+		_:
+			shader_tex = load("res://Sprites/ShaderTextures/Tex_red.png")
+		
+	mob.sprite_node.set_instance_shader_parameter("scrollingTexture",shader_tex)
+	
 	# Spawn the mob by adding it to the Main scene.
 	mob.setup(global_position)
 	add_child(mob)

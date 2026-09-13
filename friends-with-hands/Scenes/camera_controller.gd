@@ -51,4 +51,4 @@ func _on_mob_dying():
 	add_trauma(randf_range(0.7,0.9))
 
 func _on_player_on_shoot() -> void:
-	add_trauma(randf_range(0.2,0.25))
+	add_trauma(randf_range(0.15,0.2))
