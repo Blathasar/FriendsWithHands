@@ -66,6 +66,8 @@ func _on_body_entered(body: Node2D) -> void:
 	health -= 1
 	#Jun - change HP icon
 	$"../Background/HealthPoints".loadTextureBasedOnHealth(health)
+	#Jun - Sound Effect
+	body.particle_manager.emitParticle()
 	
 	if health <= 0:
 		emit_signal("gameOver")	
