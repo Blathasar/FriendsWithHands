@@ -2,6 +2,13 @@ Credit:
 	Camera Shake(Learning Material)
 		https://www.reddit.com/r/godot/comments/17e8s6f/screencamera_shake_2dgodot_4/
 		https://kidscancode.org/godot_recipes/4.x/2d/screen_shake/index.html
-	Outline Shader(Uused under CC0)
+	Outline Shader(Used under CC0)
 		https://godotshaders.com/shader/various-canvas-outlines/\
-	Music
+	BLEEPS AND BLOOPS By : Loyalty Freak Music (Used under CC0)
+		https://loyaltyfreakmusic.com/music/bleeps-and-bloops/
+	Clap Sound Effects (Used under CC0)
+		https://freesound.org/people/synthnisse/sounds/509526/
+		https://freesound.org/people/bastianpusch/sounds/493717/
+		https://freesound.org/people/young_daddy/sounds/244568/
+		https://freesound.org/people/Sorinious_Genious/sounds/561093/
+		https://freesound.org/people/jonsept/sounds/579205/

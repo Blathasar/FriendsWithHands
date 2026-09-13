@@ -16,3 +16,4 @@ func emitParticle():
 	deathParticle.position = global_position
 	deathParticle.emitting = true
 	deathParticle.texture = hand_texture
+	deathParticle.play_death_sound()
